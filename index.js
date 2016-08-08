@@ -53,7 +53,14 @@ app.use(function(req, res, next){
 
 // Configure express to use handlebars templates
 var hbs = exphbs.create({
-    defaultLayout: 'main', 
+    defaultLayout: 'main',
 });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
+
+// create server and define port
+var port = process.env.PORT || 5000;
+app.listen(port,function(){
+  console.log("Server running on port: "+port);
+})
