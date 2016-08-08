@@ -49,3 +49,11 @@ app.use(function(req, res, next){
 
   next();
 });
+
+
+// Configure express to use handlebars templates
+var hbs = exphbs.create({
+    defaultLayout: 'main', 
+});
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
